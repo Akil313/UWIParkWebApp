@@ -18,7 +18,8 @@ jobs:
           paths:
             - "node_modules"
 
-      - run: xvfb-run -a npm run test -- --no-progress --browsers=ChromeNoSandbox --watch=false
+      #- run: xvfb-run -a npm run test -- --no-progress --browsers=ChromeNoSandbox --watch=false
+	- run: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
 
       - run: npm run build
 
