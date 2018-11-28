@@ -3,11 +3,11 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-testing-page',
-  templateUrl: './testing-page.component.html',
-  styleUrls: ['./testing-page.component.css']
+  selector: 'app-details-page',
+  templateUrl: './details-page.component.html',
+  styleUrls: ['./details-page.component.css']
 })
-export class TestingPageComponent implements OnInit {
+export class DetailsPageComponent implements OnInit {
 
   lots: any;
   items: any;
