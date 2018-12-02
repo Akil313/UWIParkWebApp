@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomepageComponent } from './homepage.component';
+import {MaterialModule} from '../material.module';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
+import {environment} from '../../environments/environment';
+import {AngularFireModule} from '@angular/fire';
 
 describe('HomepageComponent', () => {
   let component: HomepageComponent;
@@ -8,7 +13,15 @@ describe('HomepageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomepageComponent ]
+      imports: [
+        MaterialModule,
+        AngularFireModule.initializeApp(environment.firebase),
+      ],
+      declarations: [ HomepageComponent ],
+      providers: [
+        AngularFirestore,
+        AngularFireDatabase
+      ]
     })
     .compileComponents();
   }));
