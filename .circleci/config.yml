@@ -5,24 +5,15 @@ jobs:
     docker:
       - image: circleci/node:8-browsers
     steps:
-
       - checkout
-      
       - restore_cache:
-          key: AngularCircleCI-{{ .Branch }}-{{ checksum "package.json" }}
-
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm install
-
       - save_cache:
-          key: AngularCircleCI-{{ .Branch }}-{{ checksum "package.json" }}
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-
-      #- run: xvfb-run -a npm run test -- --no-progress --browsers=ChromeNoSandbox --watch=false
-
-      #- run: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox 
-
-      - run: npm run test --watch=false --no-progress --browsers=ChromeNoSandbox --single-run --watch=false
+      - run: npm run test -- --browsers=ChromeHeadless --code-coverage --watch=false
 
       - run: npm run build
 
