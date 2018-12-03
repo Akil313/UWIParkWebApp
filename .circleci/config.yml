@@ -20,9 +20,9 @@ jobs:
 
       #- run: xvfb-run -a npm run test -- --no-progress --browsers=ChromeNoSandbox --watch=false
 
-      #- run: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
+      #- run: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox 
 
-      - run: npm run test
+      - run: npm run test --watch=false --no-progress --browsers=ChromeNoSandbox --single-run --watch=false
 
       - run: npm run build
 
