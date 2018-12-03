@@ -22,7 +22,9 @@ jobs:
 
       #- run: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox 
 
-      - run: npm run test --watch=false --no-progress --browsers=ChromeNoSandbox --single-run
+      #- run: npm run test --watch=false --no-progress --browsers=ChromeNoSandbox --single-run
+      
+      - run: ng test
 
       - run: npm run build
 
