@@ -1,0 +1,34 @@
+.example-card {
+  width: fit-content;
+  height: fit-content;
+  display: inline-block;
+  justify-content: space-between;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.carParkOption {
+
+  padding-bottom: 20px;
+}
+
+.carParkImage {
+  padding-left: 15%;
+  padding-right: 15%;
+  /*background-size: cover;*/
+  height: 70%;
+  width: 70%;
+
+}
+
+.card-container {
+  /*  not needed styles to reflect it */
+
+  /* needed styles below */
+  display: flex;
+  justify-content: space-around;
+  width: fit-content;
+  height: fit-content;
+}
