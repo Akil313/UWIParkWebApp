@@ -3,6 +3,11 @@
   height: fit-content;
   display: inline-block;
   justify-content: space-between;
+
+
+  grid-row: span 5;
+  grid-column: span 4;
+
 }
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
@@ -20,15 +25,30 @@
   /*background-size: cover;*/
   height: 70%;
   width: 70%;
-
 }
 
 .card-container {
   /*  not needed styles to reflect it */
 
-  /* needed styles below */
+  /* needed styles below
   display: flex;
   justify-content: space-around;
   width: fit-content;
   height: fit-content;
+  */
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(16, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+
+}
+
+.container {
+  display: grid;
+  height: 85vh;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+  overflow: scroll;
 }
