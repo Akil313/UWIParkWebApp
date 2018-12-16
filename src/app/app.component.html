@@ -9,7 +9,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #drawer mode="push">
+  <mat-sidenav #drawer mode="over" (click)="drawer.toggle()">
     <mat-nav-list>
       <a mat-list-item routerLink="/">Home Page</a>
       <a mat-list-item routerLink="/testing">Parking Lots</a>

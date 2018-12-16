@@ -15,7 +15,6 @@ export class DetailsPageComponent implements OnInit {
   constructor(private db: AngularFireDatabase, private fs: AngularFirestore) {
     this.items = fs.collection('parking_lots').valueChanges()
     console.log(this.items)
-
     db.list('/parking_lots').valueChanges()
       .subscribe(lots => {
         this.lots = lots;
