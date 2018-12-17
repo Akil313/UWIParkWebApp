@@ -12,7 +12,11 @@ export class DetailsPageComponent implements OnInit {
 
   lots: any;
   items: any;
-  CurrentLot: any;
+  CurrentLot = {
+    name: "No CarPark",
+    parking_spaces: 0,
+    taken_spaces: 0
+  };
   percent: number;
 
   constructor(private db: AngularFireDatabase, private fs: AngularFirestore, private route: ActivatedRoute) { }
@@ -25,7 +29,9 @@ export class DetailsPageComponent implements OnInit {
     userDoc.get().then((querySnapshot) => { 
       querySnapshot.forEach((doc) => {
         if (lot.localeCompare(doc.data().name) == 0){
-          this.CurrentLot = doc.data();
+          this.CurrentLot.name = doc.data().name;
+          this.CurrentLot.parking_spaces = doc.data().parking_spaces;
+          this.CurrentLot.taken_spaces = doc.data().taken_spaces;
           this.percent = this.CurrentLot.taken_spaces / this.CurrentLot.parking_spaces * 100;
         }
       })
