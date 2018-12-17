@@ -6,6 +6,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 import {environment} from '../../environments/environment';
 import {AngularFireModule} from '@angular/fire';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('TestingPageComponent', () => {
   let component: TestingPageComponent;
@@ -14,13 +15,14 @@ describe('TestingPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        RouterTestingModule,
         MaterialModule,
         AngularFireModule.initializeApp(environment.firebase)
       ],
       declarations: [ TestingPageComponent ],
       providers: [
         AngularFireDatabase,
-        AngularFirestore
+        AngularFirestore,
       ]
     })
     .compileComponents();
