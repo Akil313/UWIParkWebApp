@@ -7,7 +7,7 @@ import {DetailsPageComponent} from './details-page/details-page.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomepageComponent,
+    component: TestingPageComponent,
     data: {title: 'Home Page Component'}
   },
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
     data: {title: 'Testing Page Component'}
   },
   {
-    path: 'details',
+    path: 'testing/:lot',
     component: DetailsPageComponent,
     data: {title: 'Details Page Component'}
   }
@@ -27,3 +27,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [HomepageComponent, TestingPageComponent, DetailsPageComponent]
